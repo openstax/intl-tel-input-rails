@@ -25,11 +25,6 @@ $inputPadding: 6px !default;
 $selectedFlagWidth: $flagWidth + (2 * $flagPadding) !default;
 $selectedFlagArrowWidth: $flagWidth + $flagPadding + $arrowWidth + (2 * $arrowPadding) !default;
 
-// image related variables
-$flagsImagePath: "../assets/" !default;
-$flagsImageName: "flags" !default;
-$flagsImageExtension: "png" !default;
-
 // enough space for them to click off to close
 $mobilePopupMargin: 30px !default;
 
@@ -272,26 +267,21 @@ $mobilePopupMargin: 30px !default;
 }
 
 
-
-
-
-
 @import "sprite";
 
 .iti__flag {
   height: $flagHeight;
   box-shadow: 0px 0px 1px 0px #888;
-  background-image: url("#{$flagsImagePath}#{$flagsImageName}.#{$flagsImageExtension}");
+  background-image: url(asset_path('flags.png'));
   background-repeat: no-repeat;
   // empty state
   background-color: #DBDBDB;
   background-position: $flagWidth 0;
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background-image: url("#{$flagsImagePath}#{$flagsImageName}@2x.#{$flagsImageExtension}");
+    background-image: url(asset_path('flags@2x.png'));
   }
 }
-
 
 
 // hack for Nepal which is the only flag that is not square/rectangle, so it has transparency, so you can see the default grey behind it
