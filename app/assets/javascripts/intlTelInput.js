@@ -1681,7 +1681,7 @@ var factoryOutput = (() => {
     //* Internationalise the plugin text e.g. search input placeholder, country names.
     i18n: {},
     //* Initial country.
-    initialCountry: "",
+    initialCountry: "us",
     //* A function to load the utils script.
     loadUtils: null,
     //* National vs international formatting for numbers e.g. placeholders and displaying existing numbers.
@@ -2149,6 +2149,7 @@ var factoryOutput = (() => {
       } else if (!isAutoCountry || overrideAutoCountry) {
         const lowerInitialCountry = initialCountry ? initialCountry.toLowerCase() : "";
         const isValidInitialCountry = lowerInitialCountry && this._getCountryData(lowerInitialCountry, true);
+
         if (isValidInitialCountry) {
           this._setCountry(lowerInitialCountry);
         } else {
